@@ -39,14 +39,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
         }
     }
 
-
-    public MoviesAdapter(List<Movie> movies, int rowLayout, Context applicationContext) {
-        this.movies = movies;
-        this.rowLayout = rowLayout;
-        this.context = applicationContext;
-
-    }
-
     @Override
     public MoviesAdapter.MoviesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
@@ -60,6 +52,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
         holder.data.setText(movies.get(position).getReleaseDate());
         holder.moviesDescription.setText(movies.get(position).getOverview());
         holder.rating.setText(movies.get(position).getVoteAverage().toString());
+    }
+
+    public MoviesAdapter(List<Movie> movies, int rowLayout, Context applicationContext) {
+        this.movies = movies;
+        this.rowLayout = rowLayout;
+        this.context = applicationContext;
+
     }
 
 
