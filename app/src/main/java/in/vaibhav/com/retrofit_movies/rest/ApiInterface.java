@@ -3,7 +3,6 @@ package in.vaibhav.com.retrofit_movies.rest;
 import in.vaibhav.com.retrofit_movies.model.MoviesResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -12,9 +11,9 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    @GET("/movies/top_rated")
-    Call<MoviesResponse> getTopRatedMovies();
+    @GET("top_rated/{api_key}")
+    Call<MoviesResponse> getTopRatedMovies(@Query("api_key") String api_key);
 
-    @GET("/movies/{id}")
-    Call<MoviesResponse> getMoviesDetails(@Path("id") int id, @Query("api_key") String api_key);
+//    @GET("movies/{id}")
+//    Call<MoviesResponse> getMoviesDetails(@Path("id") int id, @Query("api_key") String api_key);
 }

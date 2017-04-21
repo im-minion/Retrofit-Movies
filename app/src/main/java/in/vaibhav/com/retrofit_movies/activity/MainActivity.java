@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ApiInterface apiServices = ApiClient.getClient().create(ApiInterface.class);
 
         // Call<MoviesResponse> call = apiServices.getTopRatedMovies(API_KEY);
-        Call<MoviesResponse> call = apiServices.getTopRatedMovies();
+        Call<MoviesResponse> call = apiServices.getTopRatedMovies(API_KEY);
 
         call.enqueue(new Callback<MoviesResponse>() {
 
